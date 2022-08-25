@@ -7,11 +7,9 @@ const ingredients = [
   "Condiments",
 ];
 const firstListEl = document.querySelector("#ingredients");
-console.log(firstListEl);
 
 ingredients.forEach((element) => {
   const createLiEl = document.createElement("li");
-  console.log(element);
 
   firstListEl.append(createLiEl);
 
