@@ -8,16 +8,14 @@ const ingredients = [
 ];
 const firstListEl = document.querySelector("#ingredients");
 
+const generateLi = [];
 ingredients.forEach((element) => {
   const createLiEl = document.createElement("li");
 
-  firstListEl.append(createLiEl);
-
   createLiEl.textContent = element;
-
   createLiEl.classList.add("item");
+
+  generateLi.push(createLiEl.outerHTML);
 });
 
-// !!! Не совсем понял как выполнить 4й пункт:
-// "После чего вставит все <li> за одну операцию в список ul#ingredients."
-//  - мой вариант верный???
+firstListEl.innerHTML = generateLi.join("");

@@ -40,19 +40,22 @@ function deleteBox() {
 
 // функция создания дочерних коробок со стилями
 function createBoxes(amount) {
+  const newEl = [];
   let size = 30;
   for (let i = 0; i < amount; i += 1) {
     size += 10;
 
     const createEl = document.createElement("div");
 
-    boxesEl.append(createEl);
+    // boxesEl.append(createEl);
 
     createEl.style.width = `${size}px`;
     createEl.style.height = `${size}px`;
 
     createEl.style.backgroundColor = `${getRandomHexColor()}`;
+    newEl.push(createEl.outerHTML);
   }
+  boxesEl.innerHTML = newEl.join("");
 }
 
 // функция рандома цветов фона

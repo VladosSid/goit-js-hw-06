@@ -5,6 +5,6 @@ console.log("Number of categories:", firstItemEl.length);
 firstItemEl.forEach((el, i, array) => {
   console.log("Category:", el.firstElementChild.innerHTML);
 
-  const secondaryListEL = array[i].querySelectorAll("li");
-  console.log("Elements:", secondaryListEL.length);
+  const secondaryListEL = el.lastElementChild.children.length;
+  console.log("Elements:", secondaryListEL);
 });

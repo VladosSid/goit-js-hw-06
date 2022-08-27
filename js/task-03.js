@@ -19,25 +19,10 @@ console.log(firstListEl);
 firstListEl.style.display = "flex";
 firstListEl.style.gap = "20px";
 
-// Добавление силектоар li and img
-images.forEach((el) => {
-  firstListEl.insertAdjacentHTML(
-    "beforeend",
-    `<li><img src='${el.url}' alt='${el.alt}' /></li>`
-  );
-});
-
-// Добавление сласса для тсилизации для img
-const imgEl = document.querySelectorAll("img");
-
-imgEl.forEach((el) => {
-  el.classList.add("img-style");
-});
-
-// Добаление стилей для img
-const imgClassEl = document.querySelectorAll(".img-style");
-console.log(imgClassEl);
-
-imgClassEl.forEach((el) => {
-  el.style.width = "200px";
-});
+const newItem = images
+  .flatMap(
+    (img) =>
+      `<li><img src='${img.url}' alt='${img.alt}' style="width: 200px;"/></li>`
+  )
+  .join("");
+firstListEl.insertAdjacentHTML("beforeend", newItem);
